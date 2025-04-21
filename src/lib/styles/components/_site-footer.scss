@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+
+.site-footer {
+	background-color: $footer-background-color;
+	color: $footer-text-color;
+	padding: $site-footer-padding;
+
+	&__inner {
+		display: flex;
+		gap: $size-4;
+		align-items: $site-footer-alignment;
+		justify-content: $site-footer-justification-small-screens;
+
+		@include mq(medium) {
+			justify-content: $site-footer-justification-large-screens;
+		}
+	}
+
+	a {
+		color: $footer-link-color;
+		text-decoration: $footer-link-text-decoration;
+		font-family: $footer-link-font-family;
+		letter-spacing: $letter-spacing-loose;
+
+		&:is(:hover, :focus) {
+			color: $footer-link-color-hover;
+		}
+	}
+}
